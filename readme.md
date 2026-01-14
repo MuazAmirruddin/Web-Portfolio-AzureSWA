@@ -5,16 +5,16 @@ The project showcases my work, skills, and contact information with a modern, re
 Please note, for now, the focus of this project is to gain experience in deploying/hosting an application on cloud platform, in this case, via Azure Static Web App, rather than the website (HTML, Tailwind CSS, Java, coding) development. Hence, the use of template and AI to complete the website.
 
 🛠️ Built With :
-HTML5 & JavaScript — Core structure and interactive elements.
-Tailwind CSS — Utility-first framework for styling.
-Gemini AI — Assisted in code refactoring, logic modifications, and UI enhancements.
-Azure Static Web Apps — Global hosting with automated CI/CD.
+1. HTML5 & JavaScript — Core structure and interactive elements.
+2. Tailwind CSS — Utility-first framework for styling.
+3. Gemini AI — Assisted in code refactoring, logic modifications, and UI enhancements.
+4. Azure Static Web Apps — Global hosting with automated CI/CD.
 
 
 🌟 Features :
-Modern Aesthetics: Clean, minimalist layout with high-quality typography.
-Customized UI: Based on a template, I have heavily modified the components and logic to align with my professional identity.
-CI/CD Pipeline: Integrated with GitHub Actions for seamless updates to Azure.
+1. Modern Aesthetics: Clean, minimalist layout with high-quality typography.
+2. Customized UI: Based on a template, I have heavily modified the components and logic to align with my professional identity.
+3. CI/CD Pipeline: Integrated with GitHub Actions for seamless updates to Azure.
 
 
 🚀 Getting Started
@@ -22,7 +22,6 @@ To run this project locally:
 1. Clone the repository:
     Bash
       git clone https://github.com/MuazAmirruddin/Web-Portfolio
-
 2. Run locally: If you are using VS Code, right-click index.html and select Open with Live Server. Alternatively, simply open the file in any modern web browser.
 
 

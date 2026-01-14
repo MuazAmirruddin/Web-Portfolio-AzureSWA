@@ -1,64 +1,44 @@
+My Portfolio - Azure Static Web App
+This is a professional portfolio website built using a Tailwind CSS template and deployed via Azure Static Web Apps. 
+The project showcases my work, skills, and contact information with a modern, responsive design.
+
+Please note, for now, the focus of this project is to gain experience in deploying/hosting an application on cloud platform, in this case, via Azure Static Web App, rather than the website (HTML, Tailwind CSS, Java, coding) development. Hence, the use of template and AI to complete the website.
+
+🛠️ Built With :
+HTML5 & JavaScript — Core structure and interactive elements.
+Tailwind CSS — Utility-first framework for styling.
+Gemini AI — Assisted in code refactoring, logic modifications, and UI enhancements.
+Azure Static Web Apps — Global hosting with automated CI/CD.
 
 
-This is a multi-themed portfolio landing page 
-
-## Customizing
-
-### Tabs
-
-To add new tabs, add a button in tabs section
-```html
- <!-- tabs section -->
-<div class="tw-absolute tw-left-[50%] tw-translate-x-[-50%]  
-            tw-flex tw-p-1 tw-px-4 tw-rounded-md tw-gap-4 
-            tw-border-2 tw-border-primary">
-    ...
-    <button class="tab-btn" onclick="openTab(event, 'newtab')">New tab</button>
-    ...
-</div>
-```
-
-Now to display content add a section as follows with `tab-content` className and `data-tab-name` attribute
-```html
-<section class="tab-content tw-w-full tw-h-full
-                    max-lg:tw-p-4 tw-flex tw-flex-col 
-                    tw-overflow-hidden tw-relative"
-                data-tab-name="skills"
-                >
-    ...
-</section>
-```
+🌟 Features :
+Modern Aesthetics: Clean, minimalist layout with high-quality typography.
+Customized UI: Based on a template, I have heavily modified the components and logic to align with my professional identity.
+CI/CD Pipeline: Integrated with GitHub Actions for seamless updates to Azure.
 
 
-**Github**: https://github.com/PaulleDemon/awesome-landing-pages
+🚀 Getting Started
+To run this project locally:
+1. Clone the repository:
+    Bash
+      git clone https://github.com/MuazAmirruddin/Web-Portfolio
 
-## Usage
-
-* This template uses tailwind css every tailwind class are prefixed with `tw-`, to help differentiate
-  between tailwind classes and other classes  
-
-During development add the following to head tag
-
-```html
-<link rel="stylesheet" href="tailwind-runtime.css"><!--replace with path to your tailwind runtime-->
-```
-During production use
-
-```html
-<link rel="stylesheet" href="tailwind-build.css"><!--replace with path to your tailwind build-->
-```
-
-To start Tailwind during development use
-```html
-npm run start:tailwind
-```
-
-To create a build file use
-```html
-npm run build:tailwind
-```
+2. Run locally: If you are using VS Code, right-click index.html and select Open with Live Server. Alternatively, simply open the file in any modern web browser.
 
 
-## Credits
+☁️ Azure Deployment
+This project is configured for Azure Static Web Apps.
+ 1. GitHub Actions: The deployment is managed via the .github/workflows/ directory.
+ 2. Automatic Builds: Every push to the main branch triggers a build and deploy cycle.
+ 3. Configuration: * App location: / (Root)
+     - Api location: None (Unless using Azure Functions)
+     - Output location: / (Or your build folder)
 
-Credits for programming icons: icons8.com
+
+📜 Credits & Attributions
+1. Base Template: Sourced from Awesome Landing Pages / HTMLRev.
+1. Modifications: Customized and enhanced with the help of Gemini AI to improve accessibility, layout, and modern coding standards.
+
+
+License
+This project is open-source and available under the MIT License.

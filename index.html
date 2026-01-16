@@ -115,41 +115,100 @@
 
                     <section id="projects" class="tab-content hidden flex flex-col gap-8">
                         <div class="max-w-4xl mx-auto w-full">
-                            <h2 class="text-3xl font-bold mb-8 border-b border-slate-700 pb-2">Technical Projects</h2>
                             
-                            <div class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl">
-                                <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
-                                    <div class="text-6xl text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
-                                        <i class="bi bi-cloud-check"></i>
+                            <div id="project-list-view">
+                                <h2 class="text-3xl font-bold mb-8 border-b border-slate-700 pb-2">Technical Projects</h2>
+                                
+                                <div onclick="showProjectDetails()" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl cursor-pointer">
+                                    <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
+                                        <div class="text-6xl text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
+                                            <i class="bi bi-cloud-check"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-8 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex justify-between items-start mb-2">
+                                                <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                                    Azure Static Web App Portfolio
+                                                </h3>
+                                                <span class="text-xs font-mono bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20">Active</span>
+                                            </div>
+                                            
+                                            <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">
+                                                Deployed this high-availability personal portfolio using <strong>Azure Static Web Apps</strong>. 
+                                                Configured a CI/CD pipeline via GitHub Actions to automate deployments from source control.
+                                            </p>
+
+                                            <div class="flex flex-wrap gap-2 mb-4">
+                                                <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">Azure SWA</span>
+                                                <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">GitHub Actions</span>
+                                                <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">DNS Management</span>
+                                            </div>
+                                            <span class="text-primary text-sm font-semibold italic">Read Documentation →</span>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="md:col-span-8 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex justify-between items-start mb-2">
-                                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                                                Azure Static Web App Portfolio
-                                            </h3>
-                                            <span class="text-xs font-mono bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20">Active</span>
+                            <div id="project-detail-view" class="hidden animate-fadeIn">
+                                <button onclick="hideProjectDetails()" class="flex items-center gap-2 text-primary font-bold mb-8 hover:text-white transition-colors">
+                                    <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
+                                </button>
+
+                                <div class="space-y-10">
+                                    <header>
+                                        <h2 class="text-4xl font-bold text-white mb-6">Azure Static Web App Portfolio</h2>
+                                        <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-primary text-gray-300 leading-relaxed">
+                                            I built this project to kickstart my journey in Cloud Engineering by setting up a professional portfolio which will give me both hands-on experience and a platform to share my resume. This portfolio was deployed as an Azure Static Web App (SWA) since it is fast, utilizes a global CDN, and provides free SSL out of the box.
                                         </div>
-                                        
-                                        <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">
-                                            Deployed this high-availability personal portfolio using <strong>Azure Static Web Apps</strong>. 
-                                            Configured a CI/CD pipeline via GitHub Actions to automate deployments from source control, ensuring seamless infrastructure updates and global content delivery.
-                                        </p>
+                                    </header>
 
-                                        <div class="flex flex-wrap gap-2 mb-6">
-                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">Azure SWA</span>
-                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">GitHub Actions</span>
-                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">DNS Management</span>
-                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">Tailwind CSS</span>
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">1. Frontend Web Development & Pre-requisites</h3>
+                                        <p class="text-gray-300">The base template was sourced from Awesome Landing Pages / HTMLRev, which I customized and enhanced with the help of Gemini AI to improve accessibility, layout, and modern coding standards. Afterwards, I ensured index.html and assets were pushed to my GitHub repository and my Azure account was active.</p>
+                                    </div>
+
+                                    <div class="space-y-6">
+                                        <h3 class="text-2xl font-bold text-primary">2. Creating the Resource (Basics)</h3>
+                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code>rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <img src="./assets/images/projects/basics-1.png" alt="Azure Basics Step 1" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-2.png" alt="Azure Basics Step 2" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-3.png" alt="Azure Basics Step 3" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
                                         </div>
                                     </div>
 
-                                    <div class="flex gap-4">
-                                        <a href="https://github.com/MuazAmirruddin" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-primary hover:text-white transition-colors">
-                                            <i class="bi bi-github"></i> View Source Code
-                                        </a>
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">3. Deployment Configuration</h3>
+                                        <p class="text-gray-300">I used the Deployment Token approach. The authorization flow follows a specific handshake using GitHub Action secrets to ensure only authorized automated pipelines can modify the portfolio.</p>
+                                        <img src="./assets/images/projects/deployment-config.png" alt="Deployment Handshake" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">4. Advanced & Global CDN</h3>
+                                        <p class="text-gray-300">Azure Static Web Apps automatically use a Global CDN, which replicates the HTML and images to edge servers all over the world. The location selection here primarily affects staging environments and Backend APIs (Azure Functions).</p>
+                                        
+                                        <img src="./assets/images/projects/advanced.png" alt="Advanced Networking" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">5. Resource Tagging</h3>
+                                        <p class="text-gray-300">Tags were implemented for organization and resource tracking within the Azure environment.</p>
+                                        <img src="./assets/images/projects/tags.png" alt="Resource Tags" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">6. Automating Updates (CI/CD Pipeline)</h3>
+                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds. A branch was also created as a staging/development environment for future improvements.</p>
+                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400">
+                                            # Automated Workflow Created by Azure<br>
+                                            - name: Build And Deploy<br>
+                                            &nbsp;&nbsp;uses: Azure/static-web-apps-deploy@v1<br>
+                                            &nbsp;&nbsp;with:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +217,6 @@
 
                     <section id="certifications" class="tab-content hidden flex flex-col items-center lg:items-start gap-8">
                         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
-                            
                             <a href="https://learn.microsoft.com/api/credentials/share/en-us/MuazAmirruddin-7317/7CE3658141F8E1C8?sharingId=3E7707E9D0B6B10D" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 text-center shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
                                 <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full bg-slate-700/30 p-2 shadow-inner">
                                     <img src="./assets/images/icons/az700.png" alt="Azure Network Engineer Badge" class="w-24 h-24 object-contain" loading="lazy" />
@@ -167,7 +225,6 @@
                                 <p class="text-sm text-gray-400 mb-4">Associate (AZ-700)</p>
                                 <span class="text-xs font-bold text-primary group-hover:underline uppercase">Verify Credential</span>
                             </a>
-
                             <a href="https://learn.microsoft.com/api/credentials/share/en-us/MuazAmirruddin-7317/A047AD96D8034358?sharingId=3E7707E9D0B6B10D" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 text-center shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
                                 <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full bg-slate-700/30 p-2 shadow-inner">
                                     <img src="./assets/images/icons/az104.png" alt="Azure Administrator Badge" class="w-24 h-24 object-contain" loading="lazy" />
@@ -176,19 +233,17 @@
                                 <p class="text-sm text-gray-400 mb-4">Associate (AZ-104)</p>
                                 <span class="text-xs font-bold text-primary group-hover:underline uppercase">Verify Credential</span>
                             </a>
-
                             <a href="https://learn.microsoft.com/api/credentials/share/en-us/MuazAmirruddin-7317/F084A0B6E2A25C75?sharingId=3E7707E9D0B6B10D" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 text-center shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
                                 <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full bg-slate-700/30 p-2 shadow-inner">
-                                    <img src="./assets/images/icons/ms700.png" alt="Teams Administrator Associate Badge" class="w-24 h-24 object-contain" loading="lazy" />
+                                    <img src="./assets/images/icons/ms700.png" alt="Teams Administrator Badge" class="w-24 h-24 object-contain" loading="lazy" />
                                 </div>
                                 <h4 class="text-lg font-bold">Teams Administrator</h4>
                                 <p class="text-sm text-gray-400 mb-4">Associate (MS-700)</p>
                                 <span class="text-xs font-bold text-primary group-hover:underline uppercase">Verify Credential</span>
                             </a>
-
                             <a href="https://www.credly.com/badges/3b3900d8-cca8-4621-9221-0ca3447ea91f/public_url" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 text-center shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
                                 <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full bg-white/10 p-2 shadow-inner ring-1 ring-white/20">
-                                    <img src="./assets/images/icons/ccna-badge.png" alt="Cisco CCNA Badge" class="w-24 h-24 object-contain filter drop-shadow-md" loading="lazy" />
+                                    <img src="./assets/images/icons/ccna-badge.png" alt="Cisco CCNA Badge" class="w-24 h-24 object-contain" loading="lazy" />
                                 </div>
                                 <h4 class="text-lg font-bold">Cisco CCNA</h4>
                                 <p class="text-sm text-gray-400 mb-4">Network Associate</p>
@@ -200,63 +255,75 @@
                     <section id="experience" class="tab-content hidden">
                         <div class="flex w-full flex-col items-center gap-6">
                             <div class="flex flex-col gap-10 w-full max-w-[800px] pb-20">
-                                
                                 <div class="relative pl-8 border-l-2 border-primary">
                                     <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-primary shadow-[0_0_10px_#fbbf24]"></div>
                                     <h3 class="text-3xl font-bold">M1 Digital Labs Sdn. Bhd.</h3>
                                     <p class="text-gray-400 italic">Network Operation Center Engineer | 12/2022 - Present</p>
                                     <ul class="list-disc ml-4 mt-4 space-y-3 text-justify text-gray-300">
                                         <li>Proactively monitored customer IT infrastructure ensuring operational continuity and SLA adherence.</li>
-                                        <li>Managed monthly Windows patching, health/security monitoring, and oversaw backup operations across On-Prem and Cloud environments.</li>
+                                        <li>Managed monthly Windows patching, health/security monitoring, and oversaw backup operations.</li>
                                     </ul>
                                 </div>
-
                                 <div class="relative pl-8 border-l-2 border-slate-600">
                                     <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-600"></div>
                                     <h3 class="text-3xl font-bold">NTT Cloud Communications (Malaysia) Sdn. Bhd.</h3>
                                     <p class="text-gray-400 italic">Global Support Engineer | 05/2021 - 11/2022</p>
                                     <ul class="list-disc ml-4 mt-4 space-y-3 text-justify text-gray-300">
-                                        <li>Provided global technical support for VoIP and UC services (Microsoft Teams, Cisco Webex).</li>
-                                        <li>Diagnosed SIP call flows and collaborated with voice engineers and vendors to resolve complex cloud communication issues.</li>
+                                        <li>Provided global technical support for VoIP and UC services.</li>
+                                        <li>Diagnosed SIP call flows and collaborated with voice engineers to resolve complex cloud issues.</li>
                                     </ul>
                                 </div>
-
                                 <div class="relative pl-8 border-l-2 border-slate-600">
                                     <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-600"></div>
                                     <h3 class="text-3xl font-bold">Celcom Networks Sdn. Bhd.</h3>
                                     <p class="text-gray-400 italic">Network Operation Center Engineer | 06/2019 - 05/2021</p>
                                     <ul class="list-disc ml-4 mt-4 space-y-3 text-justify text-gray-300">
-                                        <li>Executed RAN operations including real-time performance monitoring and PaCo router diagnostics.</li>
-                                        <li>Conducted first-line PaCo router diagnostics and maintained 24/7 surveillance of critical KPIs (throughput, data volume, PDP attach rates), enabling high network availability.</li>
-                                        <li>Pinpointed optical fiber fault locations, mitigating DWDM degradation through continuous monitoring, and executing precision wavelength adjustments to ensure optimal signal quality.</li>
+                                        <li>Executed RAN operations and PaCo router diagnostics.</li>
+                                        <li>Maintained 24/7 surveillance of critical KPIs and pinpointed optical fiber fault locations.</li>
                                     </ul>
                                 </div>
-
                             </div>
                         </div>
                     </section>
+
                 </div>
             </div>
         </main>
 
         <script>
             function openTab(evt, tabId) {
-                // Hide all tab content
                 const contents = document.querySelectorAll('.tab-content');
                 contents.forEach(content => content.classList.add('hidden'));
 
-                // Remove active class from all buttons
                 const buttons = document.querySelectorAll('.tab-btn');
                 buttons.forEach(btn => btn.classList.remove('active'));
 
-                // Show the current tab and add an "active" class to the button
                 document.getElementById(tabId).classList.remove('hidden');
                 evt.currentTarget.classList.add('active');
 
-                // Reset scroll to top of the content area
+                // If leaving projects tab, reset view to list
+                if (tabId !== 'projects') {
+                    hideProjectDetails();
+                }
+
                 const scrollContainer = document.querySelector('.flex-1.overflow-y-auto');
                 if (scrollContainer) {
                     scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+
+            function showProjectDetails() {
+                document.getElementById('project-list-view').classList.add('hidden');
+                document.getElementById('project-detail-view').classList.remove('hidden');
+                document.querySelector('.flex-1.overflow-y-auto').scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            function hideProjectDetails() {
+                const detailView = document.getElementById('project-detail-view');
+                const listView = document.getElementById('project-list-view');
+                if (detailView && listView) {
+                    detailView.classList.add('hidden');
+                    listView.classList.remove('hidden');
                 }
             }
         </script>

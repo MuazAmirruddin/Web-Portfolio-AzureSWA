@@ -58,9 +58,9 @@
                 <p class="text-primary font-medium text-sm tracking-widest uppercase text-center">Network Operation Center (NOC) Engineer </p>
 
                 <div class="mt-4 text-justify text-gray-300 text-sm leading-relaxed">
-                    <p>NOC and VoIP professional with over 5 years of hands-on experience in telco and managed services environment.</p>
-                    <p>Proven track record serving prominent organizations including Celcom, NTT Cloud Communications and M1 Digital Labs.</p>
-                    <p>A first-class honours Mechanical Engineering graduate from UiTM, bringing strong analytical thinking, system reliability focus and engineering discipline into work.</p>
+                    <p> - NOC and VoIP professional with over 5 years of hands-on experience in telco and managed services environment.</p>
+                    <p> - Proven track record serving prominent organizations including Celcom, NTT Cloud Communications and M1 Digital Labs.</p>
+                    <p> - A first-class honours Mechanical Engineering graduate from UiTM, bringing strong analytical thinking, system reliability focus and engineering discipline into work.</p>
                     <p class="mt-2 italic text-primary/80 text-center">"Sometimes the wrong train can take us to the right place" - Paulo Coelho</p>
                 </div>
 
@@ -83,6 +83,7 @@
                 <header class="p-4 bg-slate-800/50 backdrop-blur-md sticky top-0 z-10 flex justify-center">
                     <div class="flex h-12 items-center gap-2 overflow-x-auto rounded-lg border border-slate-700 bg-slate-900 p-1 no-scrollbar">
                         <button class="tab-btn active px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'about')">About</button>
+                        <button class="tab-btn px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'projects')">Projects</button>
                         <button class="tab-btn px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'certifications')">Certifications</button>
                         <button class="tab-btn px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'experience')">Experience</button>
                     </div>
@@ -107,6 +108,49 @@
                                     <span class="bg-slate-700 px-3 py-1 rounded-md border border-slate-600">Routing & Switching</span>
                                     <span class="bg-slate-700 px-3 py-1 rounded-md border border-slate-600">VoIP / SIP</span>
                                     <span class="bg-slate-700 px-3 py-1 rounded-md border border-slate-600">NOC Operations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="projects" class="tab-content hidden flex flex-col gap-8">
+                        <div class="max-w-4xl mx-auto w-full">
+                            <h2 class="text-3xl font-bold mb-8 border-b border-slate-700 pb-2">Technical Projects</h2>
+                            
+                            <div class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl">
+                                <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
+                                    <div class="text-6xl text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
+                                        <i class="bi bi-cloud-check"></i>
+                                    </div>
+                                </div>
+
+                                <div class="md:col-span-8 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                                Azure Static Web App Portfolio
+                                            </h3>
+                                            <span class="text-xs font-mono bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20">Active</span>
+                                        </div>
+                                        
+                                        <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">
+                                            Deployed this high-availability personal portfolio using <strong>Azure Static Web Apps</strong>. 
+                                            Configured a CI/CD pipeline via GitHub Actions to automate deployments from source control, ensuring seamless infrastructure updates and global content delivery.
+                                        </p>
+
+                                        <div class="flex flex-wrap gap-2 mb-6">
+                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">Azure SWA</span>
+                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">GitHub Actions</span>
+                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">DNS Management</span>
+                                            <span class="text-[10px] uppercase tracking-wider bg-slate-800 px-2 py-1 rounded text-gray-300 border border-slate-700">Tailwind CSS</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-4">
+                                        <a href="https://github.com/MuazAmirruddin" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-primary hover:text-white transition-colors">
+                                            <i class="bi bi-github"></i> View Source Code
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -197,14 +241,23 @@
 
         <script>
             function openTab(evt, tabId) {
+                // Hide all tab content
                 const contents = document.querySelectorAll('.tab-content');
                 contents.forEach(content => content.classList.add('hidden'));
 
+                // Remove active class from all buttons
                 const buttons = document.querySelectorAll('.tab-btn');
                 buttons.forEach(btn => btn.classList.remove('active'));
 
+                // Show the current tab and add an "active" class to the button
                 document.getElementById(tabId).classList.remove('hidden');
                 evt.currentTarget.classList.add('active');
+
+                // Reset scroll to top of the content area
+                const scrollContainer = document.querySelector('.flex-1.overflow-y-auto');
+                if (scrollContainer) {
+                    scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             }
         </script>
     </body>

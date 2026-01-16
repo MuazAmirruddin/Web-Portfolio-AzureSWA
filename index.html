@@ -10,16 +10,19 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
 
         <style>
+            /* Custom Scrollbar for the navigation tabs */
             .no-scrollbar::-webkit-scrollbar { display: none; }
             .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+            /* Active Tab Styling */
             .tab-btn.active {
-                background-color: #fbbf24;
+                background-color: #fbbf24; /* primary amber-400 */
                 color: #1e293b;
                 font-weight: bold;
                 border-radius: 4px;
             }
 
+            /* Content Transition */
             .tab-content {
                 animation: fadeIn 0.4s ease-out;
             }
@@ -131,8 +134,8 @@
                                         </div>
                                         
                                         <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">
-                                            Deployed a high-availability personal portfolio using <strong>Azure Static Web Apps</strong>. 
-                                            Configured a CI/CD pipeline via GitHub Actions to automate deployments from source control, ensuring seamless infrastructure updates.
+                                            Deployed this high-availability personal portfolio using <strong>Azure Static Web Apps</strong>. 
+                                            Configured a CI/CD pipeline via GitHub Actions to automate deployments from source control, ensuring seamless infrastructure updates and global content delivery.
                                         </p>
 
                                         <div class="flex flex-wrap gap-2 mb-6">
@@ -145,18 +148,17 @@
 
                                     <div class="flex gap-4">
                                         <a href="https://github.com/MuazAmirruddin" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-primary hover:text-white transition-colors">
-                                            <i class="bi bi-github"></i> Source Code
-                                        </a>
-                                        <a href="#" class="flex items-center gap-2 text-sm font-semibold text-primary hover:text-white transition-colors">
-                                            <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                                            <i class="bi bi-github"></i> View Source Code
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+
                     <section id="certifications" class="tab-content hidden flex flex-col items-center lg:items-start gap-8">
                         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
+                            
                             <a href="https://learn.microsoft.com/api/credentials/share/en-us/MuazAmirruddin-7317/7CE3658141F8E1C8?sharingId=3E7707E9D0B6B10D" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 text-center shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
                                 <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full bg-slate-700/30 p-2 shadow-inner">
                                     <img src="./assets/images/icons/az700.png" alt="Azure Network Engineer Badge" class="w-24 h-24 object-contain" loading="lazy" />
@@ -198,6 +200,7 @@
                     <section id="experience" class="tab-content hidden">
                         <div class="flex w-full flex-col items-center gap-6">
                             <div class="flex flex-col gap-10 w-full max-w-[800px] pb-20">
+                                
                                 <div class="relative pl-8 border-l-2 border-primary">
                                     <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-primary shadow-[0_0_10px_#fbbf24]"></div>
                                     <h3 class="text-3xl font-bold">M1 Digital Labs Sdn. Bhd.</h3>
@@ -228,6 +231,7 @@
                                         <li>Pinpointed optical fiber fault locations, mitigating DWDM degradation through continuous monitoring, and executing precision wavelength adjustments to ensure optimal signal quality.</li>
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
                     </section>
@@ -237,15 +241,19 @@
 
         <script>
             function openTab(evt, tabId) {
+                // Hide all tab content
                 const contents = document.querySelectorAll('.tab-content');
                 contents.forEach(content => content.classList.add('hidden'));
 
+                // Remove active class from all buttons
                 const buttons = document.querySelectorAll('.tab-btn');
                 buttons.forEach(btn => btn.classList.remove('active'));
 
+                // Show the current tab and add an "active" class to the button
                 document.getElementById(tabId).classList.remove('hidden');
                 evt.currentTarget.classList.add('active');
 
+                // Reset scroll to top of the content area
                 const scrollContainer = document.querySelector('.flex-1.overflow-y-auto');
                 if (scrollContainer) {
                     scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });

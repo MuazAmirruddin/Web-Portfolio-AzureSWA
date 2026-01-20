@@ -92,13 +92,56 @@
 
                 <div class="flex-1 overflow-y-auto p-6 lg:p-12">
                     
-                    <section id="about" class="tab-content flex flex-col items-center justify-center text-center h-full gap-8">
-                        <div class="max-w-3xl">
+                    <section id="about" class="tab-content flex flex-col items-center gap-12">
+                        <div class="max-w-3xl text-center">
                             <h2 class="text-5xl font-bold mb-6">Hi 👋, I am <span class="text-primary">Muaz</span></h2>
                             <div class="space-y-4 text-lg text-gray-300">
                                 <p>A certified Cisco Network Associate <span class="text-primary font-bold">(CCNA)</span>.</p>
                                 <p>Azure Administrator <span class="text-primary font-bold">(AZ-104)</span> & Azure Networking Engineer <span class="text-primary font-bold">(AZ-700)</span>.</p>
                                 <p>Currently seeking a new role in <span class="text-primary font-bold">Cloud Networking & Infrastructure</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full max-w-4xl">
+                            <h3 class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3">
+                                <span class="h-px w-12 bg-slate-700"></span>
+                                Technical Expertise
+                                <span class="h-px w-12 bg-slate-700"></span>
+                            </h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+                                    <div class="text-primary text-3xl mb-4"><i class="bi bi-cloud-fill"></i></div>
+                                    <h4 class="font-bold mb-3">Cloud & Infra</h4>
+                                    <ul class="text-gray-400 text-sm space-y-2">
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Azure (VNet, ExpressRoute)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> AWS Cloud Health</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Windows/Linux Servers</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Hybrid Connectivity</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+                                    <div class="text-primary text-3xl mb-4"><i class="bi bi-shield-lock-fill"></i></div>
+                                    <h4 class="font-bold mb-3">Networking</h4>
+                                    <ul class="text-gray-400 text-sm space-y-2">
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Routing & Switching (CCNA)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> SIP & VoIP Protocols</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Network Security / Firewalls</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Packet Analysis (Wireshark)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+                                    <div class="text-primary text-3xl mb-4"><i class="bi bi-gear-wide-connected"></i></div>
+                                    <h4 class="font-bold mb-3">Operations</h4>
+                                    <ul class="text-gray-400 text-sm space-y-2">
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> NOC Monitoring (NMS)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> CI/CD (GitHub Actions)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Incident Management</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Backup & Data Resiliency</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -143,7 +186,7 @@
 
                                     <div class="space-y-6">
                                         <h3 class="text-2xl font-bold text-primary">2. Creating the Resource (Basics)</h3>
-                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary/90 bg-slate-900 px-1 rounded">rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
+                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary font-mono px-1">rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
                                         
                                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                             <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" alt="Azure Basics Step 1" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
@@ -172,7 +215,7 @@
 
                                     <div class="space-y-4">
                                         <h3 class="text-2xl font-bold text-primary">6. Automating Updates (CI/CD Pipeline)</h3>
-                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds. A branch was also created as a staging/development environment for future improvements.</p>
+                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds.</p>
                                         <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
                                             # Automated Workflow Created by Azure<br>
                                             - name: Build And Deploy<br>
@@ -182,7 +225,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                         </div>
                     </section>
 

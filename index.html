@@ -127,17 +127,62 @@
                                 <button onclick="hideProjectDetails()" class="flex items-center gap-2 text-primary font-bold mb-8 hover:text-white transition-colors">
                                     <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
                                 </button>
-                                <div class="space-y-12">
-                                    <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-primary">
-                                        <p class="text-gray-300">I built this project to kickstart my journey in Cloud Engineering. This was deployed as an Azure Static Web App (SWA) because it utilizes a global CDN and provides automated TLS management.</p>
-                                    </div>
+                                
+                                <div class="space-y-10">
+                                    <header>
+                                        <h2 class="text-4xl font-bold text-white mb-6">Azure Static Web App Portfolio</h2>
+                                        <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-primary text-gray-300 leading-relaxed">
+                                            I built this project to kickstart my journey in Cloud Engineering by setting up a professional portfolio which will give me both hands-on experience and a platform to share my resume. This portfolio was deployed as an Azure Static Web App (SWA) since it is fast, utilizes a global CDN, and provides free SSL out of the box.
+                                        </div>
+                                    </header>
+
                                     <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">1. Frontend & Source Control</h3>
-                                        <p class="text-gray-300">Customized layout with Tailwind CSS and pushed to a private GitHub repository to trigger the CI/CD pipeline.</p>
-                                        <img src="./assets/images/projects/github.png" onclick="openModal(this.src)" alt="GitHub" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                        <h3 class="text-2xl font-bold text-primary">1. Frontend Web Development & Pre-requisites</h3>
+                                        <p class="text-gray-300">The base template was sourced from Awesome Landing Pages / HTMLRev, which I customized and enhanced with the help of Gemini AI to improve accessibility, layout, and modern coding standards. Afterwards, I ensured index.html and assets were pushed to my GitHub repository and my Azure account was active.</p>
                                     </div>
+
+                                    <div class="space-y-6">
+                                        <h3 class="text-2xl font-bold text-primary">2. Creating the Resource (Basics)</h3>
+                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary/90 bg-slate-900 px-1 rounded">rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" alt="Azure Basics Step 1" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-2.png" onclick="openModal(this.src)" alt="Azure Basics Step 2" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-3.png" onclick="openModal(this.src)" alt="Azure Basics Step 3" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                        </div>
                                     </div>
-                            </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">3. Deployment Configuration</h3>
+                                        <p class="text-gray-300">I used the Deployment Token approach. The authorization flow follows a specific handshake using GitHub Action secrets to ensure only authorized automated pipelines can modify the portfolio.</p>
+                                        <img src="./assets/images/projects/deployment-config.png" onclick="openModal(this.src)" alt="Deployment Handshake" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">4. Advanced & Global CDN</h3>
+                                        <p class="text-gray-300">Azure Static Web Apps automatically use a Global CDN, which replicates the HTML and images to edge servers all over the world. The location selection here primarily affects staging environments and Backend APIs (Azure Functions).</p>
+                                        <img src="./assets/images/projects/advanced.png" onclick="openModal(this.src)" alt="Advanced Networking" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">5. Resource Tagging</h3>
+                                        <p class="text-gray-300">Tags were implemented for organization and resource tracking within the Azure environment.</p>
+                                        <img src="./assets/images/projects/tags.png" onclick="openModal(this.src)" alt="Resource Tags" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">6. Automating Updates (CI/CD Pipeline)</h3>
+                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds. A branch was also created as a staging/development environment for future improvements.</p>
+                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
+                                            # Automated Workflow Created by Azure<br>
+                                            - name: Build And Deploy<br>
+                                            &nbsp;&nbsp;uses: Azure/static-web-apps-deploy@v1<br>
+                                            &nbsp;&nbsp;with:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                         </div>
                     </section>
 
